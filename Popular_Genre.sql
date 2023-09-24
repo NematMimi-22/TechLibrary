@@ -1,4 +1,3 @@
-use Tech_Library;
 WITH BorrowedBooks AS (
     SELECT
         b.Genre,

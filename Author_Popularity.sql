@@ -1,4 +1,4 @@
-SELECT
+﻿SELECT
     b.Author AS AuthorName,
     COUNT(*) AS BorrowingFrequency
 FROM
@@ -8,4 +8,4 @@ FROM
 GROUP BY
     b.Author
 ORDER BY
-    BorrowingFrequency asc;
+    BorrowingFrequency ASC;

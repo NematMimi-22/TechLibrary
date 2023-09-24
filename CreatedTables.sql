@@ -1,4 +1,3 @@
-use Tech_Library;
 CREATE TABLE Books (
     BookID INT IDENTITY(1,1) PRIMARY KEY,
     Title VARCHAR(255),
