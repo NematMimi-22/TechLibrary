@@ -1,3 +1,5 @@
+DROP FUNCTION IF EXISTS fn_CalculateOverdueFees;
+GO
 CREATE FUNCTION fn_CalculateOverdueFees(@LoanID INT)
 RETURNS int
 AS
@@ -19,3 +21,4 @@ BEGIN
 
     RETURN @OverdueFee;
 END;
+GO

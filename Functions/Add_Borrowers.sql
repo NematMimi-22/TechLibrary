@@ -1,3 +1,5 @@
+DROP PROCEDURE IF EXISTS sp_AddNewBorrower;
+GO
 CREATE PROC sp_AddNewBorrower 
 	@firstname NVARCHAR(64),
 	@lastname NVARCHAR(64),
@@ -15,3 +17,4 @@ BEGIN
 	INSERT INTO Borrowers (FirstName, LastName, Email, DateOfBirth, MembershipDate) VALUES (@firstname, @lastname, @email, @birthdate, @membershipDate);
 	
 END
+GO
