@@ -1,0 +1,13 @@
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Loans')
+BEGIN
+CREATE TABLE Loans (
+    LoanID INT IDENTITY(1,1) PRIMARY KEY,
+    BookID INT,
+    BorrowerID INT,
+    DateBorrowed DATE,
+    DueDate DATE,
+    DateReturned DATE NULL,
+    FOREIGN KEY (BookID) REFERENCES Books (BookID),
+    FOREIGN KEY (BorrowerID) REFERENCES Borrowers (BorrowerID)
+);
+END

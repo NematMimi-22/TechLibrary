@@ -1,3 +1,5 @@
+DROP PROCEDURE IF EXISTS sp_OverdueBorrowers;
+GO
 CREATE PROCEDURE sp_OverdueBorrowers
 AS
 BEGIN
@@ -28,3 +30,4 @@ BEGIN
 
     DROP TABLE #TempOverdueBorrowers;
 END;
+GO

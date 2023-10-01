@@ -1,3 +1,5 @@
+DROP PROCEDURE IF EXISTS sp_BorrowedBooksReport;
+GO
 CREATE PROCEDURE sp_BorrowedBooksReport
     @StartDate DATE,
     @EndDate DATE
@@ -16,3 +18,4 @@ BEGIN
     WHERE
         l.DateBorrowed >= @StartDate AND l.DateBorrowed <= @EndDate;
 END;
+GO

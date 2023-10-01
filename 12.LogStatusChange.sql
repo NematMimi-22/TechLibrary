@@ -1,3 +1,5 @@
+DROP TRIGGER IF EXISTS LogStatusChange;
+GO
 CREATE TRIGGER LogStatusChange
 ON Books
 AFTER UPDATE
@@ -12,3 +14,4 @@ BEGIN
         WHERE i.CurrentStatus <> d.CurrentStatus
     END
 END;
+GO
