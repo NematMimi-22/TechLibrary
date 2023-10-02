@@ -9,7 +9,7 @@ CREATE PROC sp_AddNewBorrower
 AS
 BEGIN
 
-	IF EXISTS (SELECT '*' FROM Borrowers WHERE Email = @email)
+    IF EXISTS (SELECT 1 FROM Borrowers WHERE Email = @email)
 	BEGIN
         SELECT 'Email already exists. Please use a different email.' AS ErrorMessage;
 	END
