@@ -7,8 +7,6 @@ CREATE FUNCTION fn_BookBorrowingFrequency
 RETURNS INT
 AS
 BEGIN
-    DECLARE @BorrowingCount INT;
-    SELECT @BorrowingCount = COUNT(*) FROM Loans WHERE BookID = @BookID;
-    RETURN @BorrowingCount;
+	RETURN (SELECT COUNT(*) FROM Loans WHERE BookID = @BookID);
 END;
 GO
