@@ -17,11 +17,9 @@ WITH BorrowedBooks AS (
 SELECT 
  BB.Genre,
  BB.BorrowMonth,
- BB.BorrowYear,
- BB.GenreCount
+ BB.BorrowYear
 FROM
     BorrowedBooks BB
 WHERE
-    GenreRank = 1 
-ORDER BY
-    BorrowMonth;
+    BB.BorrowMonth = 9 
+	AND GenreRank = 1;
