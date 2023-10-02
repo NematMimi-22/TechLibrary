@@ -17,7 +17,7 @@ BEGIN
     IF @DateReturned IS NULL
         SET @DateReturned = GETDATE();
 
-    SET @DaysOverdue = DATEDIFF(DAY, @DueDate, @DateReturned);
+        SET @DaysOverdue = DATEDIFF(DAY, @DueDate, @DateReturned);
 
     IF @DaysOverdue <= 30
         SET @OverdueFee = @DaysOverdue; 
