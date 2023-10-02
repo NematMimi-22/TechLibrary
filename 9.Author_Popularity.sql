@@ -8,4 +8,4 @@ FROM
 GROUP BY
     b.Author
 ORDER BY
-    BorrowingFrequency ASC;
+    BorrowingFrequency DESC;

@@ -1,3 +1,5 @@
+DROP PROCEDURE IF EXISTS sp_AddNewBorrower;
+GO
 CREATE PROC sp_AddNewBorrower 
 	@firstname NVARCHAR(64),
 	@lastname NVARCHAR(64),
@@ -7,7 +9,7 @@ CREATE PROC sp_AddNewBorrower
 AS
 BEGIN
 
-	IF EXISTS (SELECT '*' FROM Borrowers WHERE Email = @email)
+    IF EXISTS (SELECT 1 FROM Borrowers WHERE Email = @email)
 	BEGIN
         SELECT 'Email already exists. Please use a different email.' AS ErrorMessage;
 	END
@@ -15,3 +17,4 @@ BEGIN
 	INSERT INTO Borrowers (FirstName, LastName, Email, DateOfBirth, MembershipDate) VALUES (@firstname, @lastname, @email, @birthdate, @membershipDate);
 	
 END
+GO
