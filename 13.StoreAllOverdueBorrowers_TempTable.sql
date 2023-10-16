@@ -19,8 +19,6 @@ BEGIN
         T.BorrowerID,
         T.FirstName,
         T.LastName,
-        L.BookID,
-        B.Title AS BookTitle,
         L.DateBorrowed,
         L.DueDate
     FROM #TempOverdueBorrowers T
